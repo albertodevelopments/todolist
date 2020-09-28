@@ -1,0 +1,224 @@
+{
+    "labels": [
+        {
+            "label": "login.header",
+            "es-ES": "Inicio de Sesión",
+            "en-US": "Log In"
+        },
+        {
+            "label": "login.email.placeholder",
+            "es-ES": "Introduce tu correo electrónico",
+            "en-US": "Enter your e-mail address"
+        },
+        {
+            "label": "login.password.placeholder",
+            "es-ES": "Introduce tu contraseña",
+            "en-US": "Enter your password"
+        },
+        {
+            "label": "login.submit",
+            "es-ES": "Entrar",
+            "en-US": "Log In"
+        },
+        {
+            "label": "login.submit.google",
+            "es-ES": "Entrar con Google",
+            "en-US": "Log In with Google"
+        },
+        {
+            "label": "login.newAccount.link",
+            "es-ES": "¿No tienes cuenta? Crea una aquí",
+            "en-US": "New User? Sign Up For Free!"
+        },
+        {
+            "label": "newAccount.header",
+            "es-ES": "Registro de Usuario",
+            "en-US": "Sign Up"
+        },
+        {
+            "label": "newAccount.name.placeholder",
+            "es-ES": "Introduce un código de usuario",
+            "en-US": "Enter a username"
+        },
+        {
+            "label": "newAccount.email.placeholder",
+            "es-ES": "Introduce un correo electrónico válido",
+            "en-US": "Enter a valid e-mail address"
+        },
+        {
+            "label": "newAccount.password.placeholder",
+            "es-ES": "Introduce una contraseña",
+            "en-US": "Enter password"
+        },
+        {
+            "label": "newAccount.confirmPassword.placeholder",
+            "es-ES": "Confirma la contraseña",
+            "en-US": "Repeat password"
+        },
+        {
+            "label": "newAccount.submit",
+            "es-ES": "Crear Cuenta",
+            "en-US": "Sign Up"
+        },
+        {
+            "label": "newAccount.login.link",
+            "es-ES": "¿Tienes cuenta? Inicia sesión aquí",
+            "en-US": "Already Signed up?"
+        },
+        {
+            "label": "name.required",
+            "es-ES": "El nombre es obligatorio",
+            "en-US": "Name is required"
+        },
+        {
+            "label": "email.required",
+            "es-ES": "El e-mail es obligatorio",
+            "en-US": "E-mail is required"
+        },
+        {
+            "label": "email.invalid",
+            "es-ES": "El e-mail no es válido",
+            "en-US": "Invalid e-mail"
+        },
+        {
+            "label": "wrong.password",
+            "es-ES": "No existe ningún usuario registrado con este e-mail",
+            "en-US": "Wrong password"
+        },
+        {
+            "label": "password.required",
+            "es-ES": "La contraseña es obligatoria",
+            "en-US": "Password is required"
+        },
+        {
+            "label": "password.length",
+            "es-ES": "La contraseña debe contener a menos 6 caracteres",
+            "en-US": "Password must contain at least 6 characters"
+        },
+        {
+            "label": "confirmPassword.required",
+            "es-ES": "Introduzca la confirmación de la contraseña",
+            "en-US": "Password confirmation is required"
+        },
+        {
+            "label": "email.already.in.use",
+            "es-ES": "Este e-mail ya está actualmente en uso",
+            "en-US": "E-mail already in use"
+        },
+        {
+            "label": "newAccount.general.error",
+            "es-ES": "Se ha producido un error en el registro",
+            "en-US": "An error has occurred while signing up"
+        },
+        {
+            "label": "login.general.error",
+            "es-ES": "Se ha producido un error en el inicio de sesión",
+            "en-US": "An error has occurred while signing in"
+        },
+        {
+            "label": "user.not.found",
+            "es-ES": "No existe ningún usuario registrado con este e-mail",
+            "en-US": "User not found"
+        },
+        {
+            "label": "passwords.must.match",
+            "es-ES": "Las contraseñas deben coincidir",
+            "en-US": "Passwords must match"
+        },
+        {
+            "label": "logout",
+            "es-ES": "Cerrar Sesión",
+            "en-US": "Log Out"
+        },
+        {
+            "label": "select.language.spanish",
+            "es-ES": "Español",
+            "en-US": "Spanish"
+        },
+        {
+            "label": "select.language.english",
+            "es-ES": "Inglés",
+            "en-US": "English"
+        },
+        {
+            "label": "select.language",
+            "es-ES": "Idioma",
+            "en-US": "Language"
+        },
+        {
+            "label": "select.language.default",
+            "es-ES": "--Seleccione--",
+            "en-US": "--Select--"
+        },
+        {
+            "label": "task.label.placeholder",
+            "es-ES": "Introduce la descripción de la tarea",
+            "en-US": "Enter task description"
+        },
+        {
+            "label": "task.submit",
+            "es-ES": "Guardar",
+            "en-US": "Save"
+        },
+        {
+            "label": "task.required",
+            "es-ES": "La descripción de la tarea es obligatoria",
+            "en-US": "Task description required"
+        },
+        {
+            "label": "color.required",
+            "es-ES": "El color de la tarea es obligatorio",
+            "en-US": "Color required"
+        },
+        {
+            "label": "date.required",
+            "es-ES": "La fecha de la tarea es obligatoria",
+            "en-US": "Date required"
+        },
+        {
+            "label": "date.label",
+            "es-ES": "Fecha",
+            "en-US": "Date"
+        },
+        {
+            "label": "tasks.section.title",
+            "es-ES": "Gestor de Tareas",
+            "en-US": "Task Management"
+        },
+        {
+            "label": "tasks.user.not.found",
+            "es-ES": "Ha ocurrido un error: usuario inexistente",
+            "en-US": "An error has ocurred: user not found"
+        },
+        {
+            "label": "tasks.create.error",
+            "es-ES": "Se ha producido un error al crear la tarea",
+            "en-US": "An error has ocurred while creating the task"
+        },
+        {
+            "label": "tasks.delete.error",
+            "es-ES": "Se ha producido un error al eliminar la tarea",
+            "en-US": "An error has ocurred while deleting the task"
+        },
+        {
+            "label": "tasks.complete.error",
+            "es-ES": "Se ha producido un error al completar la tarea",
+            "en-US": "An error has ocurred while completing the task"
+        },
+        {
+            "label": "task.complete",
+            "es-ES": "Completar la tarea",
+            "en-US": "Complete task"
+        },
+        {
+            "label": "task.reopen",
+            "es-ES": "Reabrir la tarea",
+            "en-US": "Reopen task"
+        },
+        {
+            "label": "task.delete",
+            "es-ES": "Borrar la tarea",
+            "en-US": "Delete task"
+        }
+    ]
+}

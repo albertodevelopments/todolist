@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+// Dependencias
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+// Componentes
+import NewAccount from 'pages/NewAccount'
+import Login from 'pages/Login'
+import Main from 'pages/Main'
+import Layout from 'components/Layout'
+
+// Context
+import AppService from 'context/AppService'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <AppService>
+            <Router>
+                <Switch>
+                    <Layout>
+                        <Route exact path='/login'>
+                            <Login />
+                        </Route>
+                        <Route exact path='/'>
+                            <Login />
+                        </Route>
+                        <Route exact path='/new-account'>
+                            <NewAccount />
+                        </Route>
+                        <Route exact path='/main'>
+                            <Main />
+                        </Route>
+                    </Layout>
+                </Switch>
+            </Router>
+        </AppService>
+    )
 }
 
-export default App;
+export default App
