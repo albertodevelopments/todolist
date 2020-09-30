@@ -15,6 +15,10 @@ It couldn´t be simpler!
 
 Nevertheless, that doesn´t finish here. As long as you create your tasks, they will be shown as a list of cards containing the description, the selected color and the date in the format of the time left to to reach it. So you will have a quick and qualitative look for your pending 'TODOes'. To help this, they are sorted from the nearest to the furthest one.
 
+### Languages
+
+The applications also has two selectable languages: English and Spanish. To change them just click the select widget located in the header.
+
 ### More control tools
 
 Also, you have a couple of icon buttons on the top-right edge of every card. You will use them to complete or delete the task. When you select "Complete", the description sentence will be in green and crossed out. This will help you to quickly realize when something is done. On the other side, if a task is expired, you will see its description in red and with the word Expired between brackets at the end of the sentence.
