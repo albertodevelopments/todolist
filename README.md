@@ -17,7 +17,7 @@ Nevertheless, that doesn´t finish here. As long as you create your tasks, they 
 
 ### Languages
 
-The applications also has two selectable languages: English and Spanish. To change them just click the select widget located in the header.
+The applications also has two selectable languages: English and Spanish. Just click on the select widget located in the header to change them .
 
 ### More control tools
 
