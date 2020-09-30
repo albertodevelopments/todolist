@@ -2,13 +2,12 @@
 
 Your application to friendly manage your tasks and keep everything in order!
 
-### `yarn start`
+### How to use it
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+TODOList separates tasks by user, so what you first have to do is to sign up entering a nickname, an e-mail and a password. Or you can log in directly from Google.
+If you decide to give a valid e-mail to create an account, you will be able to reset your password if you forget it or simply want to change it.
+Once you 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 ### `yarn test`
 
