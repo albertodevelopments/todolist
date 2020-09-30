@@ -191,7 +191,7 @@ const Login = () => {
                 <Link to='/new-account'>
                     {getLabel('login.newAccount.link')}
                 </Link>
-                <a onClick={handleReset}>{getLabel('password.reset')}</a>
+                <span onClick={handleReset}>{getLabel('password.reset')}</span>
             </form>
         </AuthenticationCard>
     )

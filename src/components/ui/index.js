@@ -48,7 +48,8 @@ export const AuthenticationCard = styled.div`
         margin-bottom: 1.5rem;
     }
 
-    a {
+    a,
+    span {
         display: flex;
         justify-content: flex-start;
         margin: 0 auto;
@@ -60,7 +61,7 @@ export const AuthenticationCard = styled.div`
         cursor: pointer;
     }
 
-    a:last-of-type {
+    span {
         padding-top: 0.5rem;
     }
 `

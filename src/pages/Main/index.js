@@ -40,10 +40,9 @@ const Main = () => {
         setListOfTasks(listOfTasks)
     }
 
-    // Lo comento temporalmente durante las pruebas, para que al guardar no vaya a la pantalla de Login
-    // if(!user){
-    //     return <Redirect to='/login' />
-    // }
+    if (!user) {
+        return <Redirect to='/login' />
+    }
 
     /* -------------------------------------------------------------------- */
     /* --------------------------- RENDERIZADO ---------------------------- */
