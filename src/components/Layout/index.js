@@ -5,6 +5,7 @@ import Header from 'components/Header'
 
 // Servicios
 import { getTranslations } from 'services/translations'
+import { onAuthStateChanged } from 'firebase/client'
 
 // Context
 import AppContext from 'context/AppContext'
@@ -13,9 +14,12 @@ const Layout = ({ children }) => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
-    const { translationsArray, setTranslationsArray, setLanguage } = useContext(
-        AppContext
-    )
+    const {
+        translationsArray,
+        setTranslationsArray,
+        setLanguage,
+        setUser,
+    } = useContext(AppContext)
 
     /* -------------------------------------------------------------------- */
     /* ---------------------------- USE EFFECTS --------------------------- */
@@ -24,6 +28,9 @@ const Layout = ({ children }) => {
         aplicación a través del contexto
     */
     useEffect(() => {
+        // Cargamos el contexto con el usuario autenticado al recargar la página
+        onAuthStateChanged(setUser)
+
         const language =
             localStorage.getItem('todolist-language') ||
             navigator.language ||

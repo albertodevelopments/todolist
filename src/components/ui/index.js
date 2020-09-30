@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const AppButton = styled.button`
     display: flex;
     width: ${props => props.width};
-    margin: 0.4rem auto;
-    height: calc(1.7em + 0.75rem + 2px);
+    margin: 0.5rem auto;
+    height: 3rem;
     padding: 0.375rem 0.75rem;
     outline: none;
     border-radius: 0.25rem;
@@ -27,6 +27,17 @@ export const AppButton = styled.button`
         color: #fff;
         background-color: var(--orange);
         border: 1px solid var(--font-gray);
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        height: 2.2rem;
+        font-size: 0.9rem;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
     }
 `
 
@@ -64,6 +75,19 @@ export const AuthenticationCard = styled.div`
     span {
         padding-top: 0.5rem;
     }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        width: 100%;
+        margin-top: 7rem;
+        border: none;
+        box-shadow: none;
+
+        a,
+        span {
+            font-size: 0.75rem;
+        }
+    }
 `
 
 export const AuthenticationInputGroup = styled.div`
@@ -89,7 +113,7 @@ export const AuthenticationInputGroup = styled.div`
         width: ${props => props.fieldWidth};
         padding: 0.375rem 0.75rem;
         padding-right: 10%;
-        height: calc(1.7em + 0.75rem + 2px);
+        height: 2.8rem;
         border: 1px solid #ced4da;
         border-radius: 0.25rem;
         font-weight: 500;
@@ -102,5 +126,15 @@ export const AuthenticationInputGroup = styled.div`
         outline: none;
         border: 2px solid #8cb1ca;
         box-shadow: 0 0 2px #7494b1;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        input[type='email'],
+        input[type='password'],
+        input[type='text'] {
+            height: 2.5rem;
+            font-size: 0.8rem;
+        }
     }
 `

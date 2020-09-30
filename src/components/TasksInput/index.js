@@ -5,7 +5,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 // Servicios
-import { onAuthStateChanged, createNewTask } from 'firebase/client'
+import { createNewTask } from 'firebase/client'
 
 // Hooks
 import { useTranslation } from 'hooks/useTranslation'
@@ -23,7 +23,7 @@ const TasksInput = () => {
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
     const [colorChecked, setColorChecked] = useState('')
-    const { user, setUser, setListOfTasks } = useContext(AppContext)
+    const { user, setListOfTasks } = useContext(AppContext)
     const [errorMessage, setErrorMessage] = useState('')
     const taskRef = useRef()
     const today = new Date()
@@ -69,9 +69,6 @@ const TasksInput = () => {
     /* ---------------------------- USE EFFECTS --------------------------- */
     /* -------------------------------------------------------------------- */
     useEffect(() => {
-        // Cargamos el contexto con el usuario autenticado al recargar la página
-        onAuthStateChanged(setUser)
-
         taskRef.current.focus()
     }, [])
 
@@ -167,6 +164,9 @@ const TasksInput = () => {
                         <label htmlFor='orange'></label>
                     </ColorRadio>
                 </div>
+                {formik.touched.color && formik.errors.color && (
+                    <Alert message={formik.errors.color} width='100%' />
+                )}
                 <div>
                     <label htmlFor='date-task'>{getLabel('date.label')}</label>
                     <DateInput
@@ -178,9 +178,7 @@ const TasksInput = () => {
                     />
                 </div>
             </SelectionsBlock>
-            {formik.touched.color && formik.errors.color && (
-                <Alert message={formik.errors.color} />
-            )}
+
             {formik.touched.taskDate && formik.errors.taskDate && (
                 <Alert message={formik.errors.taskDate} />
             )}

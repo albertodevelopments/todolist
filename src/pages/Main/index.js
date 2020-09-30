@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 // Hooks
 import { useTranslation } from 'hooks/useTranslation'
@@ -15,12 +15,14 @@ import { fetchListOfTasks } from 'firebase/client'
 import ListOfTasks from 'components/ListOfTasks'
 import TasksInput from 'components/TasksInput'
 import { MainPage, TaskSection } from './styles'
+import Loading from 'components/Loading'
 
 const Main = () => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
     const { user, setListOfTasks } = useContext(AppContext)
+    const [timeout, setTimeout] = useState(false)
 
     // Traducciones
     const { getLabel } = useTranslation()
@@ -28,6 +30,14 @@ const Main = () => {
     /* -------------------------------------------------------------------- */
     /* ---------------------------- USE EFFECTS --------------------------- */
     /* -------------------------------------------------------------------- */
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeout(true)
+        }, 5000)
+
+        return () => clearInterval(timer)
+    }, [])
+
     useEffect(() => {
         user && getTasks(user.uid)
     }, [user])
@@ -40,7 +50,7 @@ const Main = () => {
         setListOfTasks(listOfTasks)
     }
 
-    if (!user) {
+    if (timeout && !user) {
         return <Redirect to='/login' />
     }
 
@@ -49,11 +59,17 @@ const Main = () => {
     /* -------------------------------------------------------------------- */
     return (
         <MainPage>
-            <h1>{getLabel('tasks.section.title')}</h1>
-            <TaskSection>
-                <TasksInput />
-                <ListOfTasks />
-            </TaskSection>
+            {user ? (
+                <>
+                    <h1>{getLabel('tasks.section.title')}</h1>
+                    <TaskSection>
+                        <TasksInput />
+                        <ListOfTasks />
+                    </TaskSection>
+                </>
+            ) : (
+                <Loading />
+            )}
         </MainPage>
     )
 }

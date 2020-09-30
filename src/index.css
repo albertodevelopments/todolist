@@ -42,3 +42,13 @@ a:active {
 ul {
     list-style: none;
 }
+
+/* Media queries */
+
+/* Vista teléfono móvil */
+@media (max-width: 360px) {
+    html,
+    body {
+        background-color: #fff;
+    }
+}

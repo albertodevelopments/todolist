@@ -5,6 +5,18 @@ export const MainPage = styled.main`
     margin-top: 5rem;
     padding: 2rem;
     text-align: center;
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        width: 100%;
+        margin-top: 10rem;
+        padding-top: 1rem;
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+    }
 `
 
 export const TaskSection = styled.div`
@@ -19,5 +31,11 @@ export const TaskSection = styled.div`
 
     form {
         width: 100%;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        width: 100%;
+        padding: 0;
     }
 `

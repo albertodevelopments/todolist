@@ -249,6 +249,11 @@
             "label": "error.reseting.password",
             "es-ES": "Ha ocurrido un error al restablecer la contraseña",
             "en-US": "An error has ocurred while reseting your password"
+        },
+        {
+            "label": "loading",
+            "es-ES": "Cargando...",
+            "en-US": "Loading..."
         }
     ]
 }

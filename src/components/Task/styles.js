@@ -22,6 +22,16 @@ export const TaskCard = styled.article`
         margin-top: 0.3rem;
         font-style: italic;
     }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        padding: 0.4rem;
+
+        p,
+        p + span {
+            font-size: 0.8rem;
+        }
+    }
 `
 
 export const TaskHeader = styled.div`
@@ -43,6 +53,24 @@ export const TaskHeader = styled.div`
         line-height: 2rem;
         margin-left: 0.4rem;
         font-size: 1.9rem;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        margin-bottom: 0.3rem;
+        margin-top: -0.2rem;
+        margin-right: 0;
+
+        span {
+            font-size: 0.8rem;
+            line-height: 0.1rem;
+        }
+
+        span:last-of-type {
+            margin-left: 0.4rem;
+            font-size: 1.4rem;
+            line-height: 0.6rem;
+        }
     }
 `
 export const Color = styled.div`

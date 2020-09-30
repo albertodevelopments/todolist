@@ -5,6 +5,19 @@ export const SelectionsBlock = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        text-align: left;
+
+        label {
+            font-size: 0.8rem;
+            height: 2.2rem;
+        }
+    }
 `
 
 export const InputField = styled.input`
@@ -12,7 +25,7 @@ export const InputField = styled.input`
     padding-top: 0.6rem;
     padding: 0.375rem 0.75rem;
     padding-right: 10%;
-    height: calc(1.7em + 0.75rem + 2px);
+    height: 2.8rem;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     font-weight: 500;
@@ -22,6 +35,13 @@ export const InputField = styled.input`
         outline: none;
         border: 2px solid #8cb1ca;
         box-shadow: 0 0 2px #7494b1;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        height: 2.2rem;
+        font-size: 0.8rem;
+        padding: 0.375rem;
     }
 `
 
@@ -48,12 +68,22 @@ export const ColorRadio = styled.span`
     input:checked + label {
         border: 5px solid ${props => props.borderColor};
     }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+
+        label {
+            width: 30px;
+            height: 30px;
+        }
+    }
 `
 export const DateInput = styled.input`
     width: 200px;
     padding: 0.375rem 0.75rem;
-    padding-right: 10%;
-    height: calc(1.7em + 0.75rem + 2px);
+    height: 2.8rem;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     font-weight: 500;
@@ -64,5 +94,12 @@ export const DateInput = styled.input`
         outline: none;
         border: 2px solid #8cb1ca;
         box-shadow: 0 0 2px #7494b1;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        font-size: 0.8rem;
+        height: 2.2rem;
+        padding: 0.375rem;
     }
 `

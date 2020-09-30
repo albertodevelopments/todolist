@@ -12,6 +12,11 @@ const AlertBody = styled.div`
     color: #fff;
     user-select: none;
     border-radius: 0.25rem;
+
+    /* Vista teléfono móvil */
+    @media (max-width: 360px) {
+        font-size: 0.8rem;
+    }
 `
 
 const Alert = ({ message, width, success }) => {
