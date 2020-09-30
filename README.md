@@ -7,60 +7,17 @@ Your application to friendly manage your tasks and keep everything in order!
 TODOList saves tasks by user, so what you first have to do is to sign up entering a nickname, an e-mail and a password. Or you can log in directly from Google.
 If you decide to give a valid e-mail to create an account, you will be able to reset your password if you forget it or simply want to change it.
 
-Once you are registerd and logged in, you will be redirected to the main page. The interface is very simple: you will find an input field for you to enter a description for your task. Then, you will have four different colors to choose for customizing your task. Thanks to this you will be able to assign levels or types of task depending on the associ
+Once you are registerd and logged in, you will be redirected to the main page. The interface is very simple: you will find an input field for you to enter a description for your task. Then, you will have four different colors to choose for customizing it. Thanks to this, you will be able to assign levels or types of task depending on the linked color. Finally, you will be prompted to enter a task date, starting by the day after the current one. All these inputs are mandatory in order to ensure consistent data.
 
+It couldn´t be simpler!
 
-### `yarn test`
+### Manage your tasks
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Nevertheless, that doesn´t finish here. As long as you create your tasks, they will be shown as a list of cards containing the description, the selected color and the date in the format of the time left to to reach it. So you will have a quick and qualitative view for you pending 'TODOes'. To help this, they are sorted from the nearest to the furthest one.
 
-### `yarn build`
+### More control tools
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Also, you have a couple of icons buttons on the top-right edge of every card. You will use them to complete or delete the task. When you select "Complete", the description sentence will be in green and crossed out. This will help you to quickly realize when something is done. On the other side, if a task is expired, you will see its description in red and with the word Expired between brackets at the end of the sentence.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+That´s all! Play around and enjoy!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
