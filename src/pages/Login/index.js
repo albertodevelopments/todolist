@@ -15,7 +15,7 @@ import {
 import GoogleLogo from 'components/Icons'
 
 // Servicios
-import { signInByEmail, signInWithGoogle } from 'firebase/client'
+import { signInByEmail, signInWithGoogle, resetPassword } from 'firebase/client'
 
 // Hooks
 import { useTranslation } from 'hooks/useTranslation'
@@ -27,7 +27,10 @@ const Login = () => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
-    const [errorMessage, setErrorMessage] = useState('')
+    const [alert, setAlert] = useState({
+        message: '',
+        success: false,
+    })
     const { setUser } = useContext(AppContext)
     const history = useHistory()
 
@@ -72,11 +75,25 @@ const Login = () => {
 
     const handleError = errorCode => {
         if (errorCode === 'auth/user-not-found') {
-            setErrorMessage(getLabel('user.not.found'))
+            setAlert({
+                message: getLabel('user.not.found'),
+                success: false,
+            })
         } else if (errorCode === 'auth/wrong-password') {
-            setErrorMessage(getLabel('wrong.password'))
+            setAlert({
+                message: getLabel('wrong.password'),
+                success: false,
+            })
+        } else if (errorCode === 'auth/too-many-requests') {
+            setAlert({
+                message: getLabel('login.too.many.requests'),
+                alert: false,
+            })
         } else {
-            setErrorMessage(getLabel('login.general.error'))
+            setAlert({
+                message: getLabel('login.general.error'),
+                success: false,
+            })
         }
     }
 
@@ -87,7 +104,32 @@ const Login = () => {
                 history.push('/main')
             }
         } catch (error) {
-            console.log(error)
+            setAlert({
+                message: getLabel('login.general.error'),
+                success: false,
+            })
+        }
+    }
+
+    const handleReset = async () => {
+        if (!formik.values.email || formik.values.email === '') {
+            setAlert({
+                message: getLabel('login.enter.email'),
+                alert: false,
+            })
+            return
+        }
+        try {
+            await resetPassword(formik.values.email)
+            setAlert({
+                message: getLabel('password.successfully.reset'),
+                success: true,
+            })
+        } catch (error) {
+            setAlert({
+                message: getLabel('error.reseting.password'),
+                success: false,
+            })
         }
     }
 
@@ -128,8 +170,12 @@ const Login = () => {
                 {formik.touched.password && formik.errors.password && (
                     <Alert message={formik.errors.password} width='80%' />
                 )}
-                {errorMessage !== '' && (
-                    <Alert message={errorMessage} width='80%' />
+                {alert.message !== '' && (
+                    <Alert
+                        message={alert.message}
+                        success={alert.success}
+                        width='80%'
+                    />
                 )}
                 <AppButton type='submit' width='80%'>
                     {getLabel('login.submit')}
@@ -139,14 +185,13 @@ const Login = () => {
                     onClick={handleLoginWithGoogle}
                     width='80%'
                 >
-                    <div>
-                        <GoogleLogo />
-                        <span>{getLabel('login.submit.google')}</span>
-                    </div>
+                    <GoogleLogo />
+                    {getLabel('login.submit.google')}
                 </AppButton>
                 <Link to='/new-account'>
                     {getLabel('login.newAccount.link')}
                 </Link>
+                <a onClick={handleReset}>{getLabel('password.reset')}</a>
             </form>
         </AuthenticationCard>
     )

@@ -5,6 +5,7 @@ import {
     LIST_OF_TASKS,
     TASK_COMPLETED,
     TASK_OPEN,
+    LANGUAGE,
 } from 'types'
 
 export default (state, action) => {
@@ -13,6 +14,11 @@ export default (state, action) => {
             return {
                 ...state,
                 translationsArray: action.payload,
+            }
+        case LANGUAGE:
+            return {
+                ...state,
+                language: action.payload,
             }
         case AUTHENTICATED_USER:
             return {
@@ -47,6 +53,7 @@ export default (state, action) => {
                     return task
                 }),
             }
+
         default:
             return state
     }

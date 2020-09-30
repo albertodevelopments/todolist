@@ -82,7 +82,7 @@
         },
         {
             "label": "wrong.password",
-            "es-ES": "No existe ningún usuario registrado con este e-mail",
+            "es-ES": "Contraseña incorrecta",
             "en-US": "Wrong password"
         },
         {
@@ -104,6 +104,11 @@
             "label": "email.already.in.use",
             "es-ES": "Este e-mail ya está actualmente en uso",
             "en-US": "E-mail already in use"
+        },
+        {
+            "label": "login.too.many.requests",
+            "es-ES": "Se ha excedido el número de intentos",
+            "en-US": "Too many requests"
         },
         {
             "label": "newAccount.general.error",
@@ -219,6 +224,31 @@
             "label": "task.delete",
             "es-ES": "Borrar la tarea",
             "en-US": "Delete task"
+        },
+        {
+            "label": "task.expired",
+            "es-ES": "Vencida",
+            "en-US": "Expired"
+        },
+        {
+            "label": "password.reset",
+            "es-ES": "Restablecer contraseña",
+            "en-US": "Reset password"
+        },
+        {
+            "label": "login.enter.email",
+            "es-ES": "Introduce el correo electrónico",
+            "en-US": "Please, enter your e-mail"
+        },
+        {
+            "label": "password.successfully.reset",
+            "es-ES": "Se ha restablecido la contraseña. Consulte su correo electrónico",
+            "en-US": "Your password has been reset. Please check your e-mail address"
+        },
+        {
+            "label": "error.reseting.password",
+            "es-ES": "Ha ocurrido un error al restablecer la contraseña",
+            "en-US": "An error has ocurred while reseting your password"
         }
     ]
 }

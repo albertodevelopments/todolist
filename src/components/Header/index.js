@@ -20,7 +20,9 @@ const Header = () => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
-    const { user, setUser, setTranslationsArray } = useContext(AppContext)
+    const { user, setUser, setTranslationsArray, setLanguage } = useContext(
+        AppContext
+    )
     const { getLabel } = useTranslation()
     const history = useHistory()
 
@@ -30,6 +32,7 @@ const Header = () => {
     const handleChange = e => {
         getTranslations(e.target.value).then(setTranslationsArray)
         localStorage.setItem('todolist-language', e.target.value)
+        setLanguage(e.target.value.substring(0, 2))
     }
 
     const handleLogOut = () => {

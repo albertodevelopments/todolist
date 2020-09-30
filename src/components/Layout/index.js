@@ -13,7 +13,9 @@ const Layout = ({ children }) => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
-    const { translationsArray, setTranslationsArray } = useContext(AppContext)
+    const { translationsArray, setTranslationsArray, setLanguage } = useContext(
+        AppContext
+    )
 
     /* -------------------------------------------------------------------- */
     /* ---------------------------- USE EFFECTS --------------------------- */
@@ -27,6 +29,7 @@ const Layout = ({ children }) => {
             navigator.language ||
             'es-ES'
         getTranslations(language).then(setTranslationsArray)
+        setLanguage(language.substring(0, 2))
     }, [])
 
     if (!translationsArray) return null

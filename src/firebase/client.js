@@ -55,6 +55,10 @@ export const signInWithGoogle = async () => {
     return mapUserFromGoogleAuth(user)
 }
 
+export const resetPassword = async emailAddress => {
+    await app.auth().sendPasswordResetEmail(emailAddress)
+}
+
 export const signOut = async () => {
     return await app.auth().signOut()
 }
@@ -68,7 +72,7 @@ export const fetchListOfTasks = async userId => {
     const tasksSnapshot = await db
         .collection('tasks')
         .where('userId', '==', userId)
-        .orderBy('taskDate', 'desc')
+        .orderBy('taskDate', 'asc')
         .get()
     return await tasksSnapshot.docs.map(doc => {
         const data = doc.data()

@@ -11,13 +11,16 @@ export const TaskCard = styled.article`
 
     p {
         text-align: justify;
+        color: ${props => props.expired && 'var(--red)'};
+        color: ${props => props.completed && 'var(--green)'};
         text-decoration: ${props =>
-            props.completed ? 'line-through' : 'none'};
+            props.expired || props.completed ? 'line-through' : 'none'};
     }
 
     span {
         text-align: end;
         margin-top: 0.3rem;
+        font-style: italic;
     }
 `
 

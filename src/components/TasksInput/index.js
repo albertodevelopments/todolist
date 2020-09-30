@@ -31,12 +31,12 @@ const TasksInput = () => {
     // Formateamos la fecha actual como YYYY-MM-DD para poder usarla en el atributo min del campo fecha
     const todayString =
         today.getMonth() <= 9
-            ? `${today.getFullYear()}-0${
-                  today.getMonth() + 1
-              }-${today.getDate()}`
-            : `${today.getFullYear()}-${
-                  today.getMonth() + 1
-              }-${today.getDate()}`
+            ? `${today.getFullYear()}-0${today.getMonth() + 1}-${
+                  today.getDate() + 1
+              }`
+            : `${today.getFullYear()}-${today.getMonth() + 1}-${
+                  today.getDate() + 1
+              }`
 
     // Traducciones
     const { getLabel } = useTranslation()
@@ -61,6 +61,7 @@ const TasksInput = () => {
                 taskDate: '',
             })
             setColorChecked('')
+            taskRef.current.focus()
         },
     })
 
@@ -129,12 +130,12 @@ const TasksInput = () => {
                         />
                         <label htmlFor='blue'></label>
                     </ColorRadio>
-                    <ColorRadio color='#0caf0c' borderColor='#054a05'>
+                    <ColorRadio color='#0b960bed' borderColor='#054a05'>
                         <input
                             type='radio'
                             name='color'
                             id='green'
-                            value='#0caf0c'
+                            value='#0b960bed'
                             checked={colorChecked === 'green'}
                             onClick={() => handleColorClick('green')}
                             onChange={formik.handleChange}

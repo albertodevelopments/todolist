@@ -1,10 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 
 // Context
 import AppContext from 'context/AppContext'
 
 // Servicios
 import { deleteTask, completeTask } from 'firebase/client'
+
+// Dependencias
+import formatDistanceStrict from 'date-fns/formatDistanceStrict'
+import { es } from 'date-fns/locale'
 
 // Hooks
 import { useTranslation } from 'hooks/useTranslation'
@@ -17,12 +21,42 @@ const Task = ({ task }) => {
     /* -------------------------------------------------------------------- */
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
+    const [expired, setExpired] = useState(false)
+    const [dateToPrint, setDateToPrint] = useState(null)
     const [errorMessage, setErrorMessage] = useState('')
-    const { setTaskDeleted, setTaskCompleted, setTaskOpen } = useContext(
-        AppContext
-    )
+    const {
+        language,
+        setTaskDeleted,
+        setTaskCompleted,
+        setTaskOpen,
+    } = useContext(AppContext)
     const { getLabel } = useTranslation()
     const { id, description, color, taskDate, completed } = task
+
+    /* -------------------------------------------------------------------- */
+    /* ---------------------------- USE EFFECTS --------------------------- */
+    /* -------------------------------------------------------------------- */
+    useEffect(() => {
+        if (!language) return
+
+        // Formateamos la fecha para que aparezca según el idioma
+        const today = new Date()
+        const dateToPrint =
+            language === 'es'
+                ? formatDistanceStrict(new Date(taskDate), today, {
+                      locale: es,
+                      roundingMethod: 'floor',
+                      addSuffix: true,
+                  })
+                : formatDistanceStrict(new Date(taskDate), today, {
+                      roundingMethod: 'floor',
+                      addSuffix: true,
+                  })
+        setDateToPrint(dateToPrint)
+
+        // Controlamos si una tarea ha vencido
+        setExpired(!completed && new Date(taskDate) < today)
+    }, [language, taskDate, completed])
 
     /* -------------------------------------------------------------------- */
     /* ----------------------------- FUNCIONES ---------------------------- */
@@ -56,7 +90,7 @@ const Task = ({ task }) => {
     /* --------------------------- RENDERIZADO ---------------------------- */
     /* -------------------------------------------------------------------- */
     return (
-        <TaskCard completed={completed}>
+        <TaskCard completed={completed} expired={expired}>
             <TaskHeader>
                 <Color color={color} />
                 <div>
@@ -83,8 +117,11 @@ const Task = ({ task }) => {
                     </span>
                 </div>
             </TaskHeader>
-            <p>{description}</p>
-            <span>{taskDate}</span>
+            <p>
+                {description}{' '}
+                {expired ? ` (${getLabel('task.expired')})` : null}
+            </p>
+            <span>{dateToPrint}</span>
             {errorMessage !== '' && (
                 <Alert message={errorMessage} width='100%' />
             )}

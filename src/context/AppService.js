@@ -8,6 +8,7 @@ import {
     LIST_OF_TASKS,
     TASK_COMPLETED,
     TASK_OPEN,
+    LANGUAGE,
 } from 'types'
 import AppContext from './AppContext'
 import AppReducer from './AppReducer'
@@ -17,12 +18,13 @@ const AppService = ({ children }) => {
     /* --------------------- CONSTANTES Y DECLARACIONES ------------------- */
     /* -------------------------------------------------------------------- */
     const initialState = {
+        language: '',
         translationsArray: null,
         user: null,
         listOfTasks: [],
     }
     const [state, dispatch] = useReducer(AppReducer, initialState)
-    const { translationsArray, user, listOfTasks } = state
+    const { translationsArray, language, user, listOfTasks } = state
 
     /* -------------------------------------------------------------------- */
     /* ----------------------------- FUNCIONES ---------------------------- */
@@ -31,6 +33,13 @@ const AppService = ({ children }) => {
         dispatch({
             type: TRANSLATIONS_ARRAY,
             payload: translationsArray,
+        })
+    }
+
+    const setLanguage = language => {
+        dispatch({
+            type: LANGUAGE,
+            payload: language,
         })
     }
 
@@ -74,8 +83,10 @@ const AppService = ({ children }) => {
             value={{
                 translationsArray,
                 user,
+                language,
                 listOfTasks,
                 setTranslationsArray,
+                setLanguage,
                 setUser,
                 setTaskDeleted,
                 setListOfTasks,

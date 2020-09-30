@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const AppButton = styled.button`
+    display: flex;
     width: ${props => props.width};
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
+    margin: 0.4rem auto;
     height: calc(1.7em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
     outline: none;
@@ -14,6 +14,8 @@ export const AppButton = styled.button`
     font-size: 1.2rem;
     box-shadow: 0 0 4px #e0c0b6 inset;
     letter-spacing: 0.2rem;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
 
     :first-of-type {
@@ -25,12 +27,6 @@ export const AppButton = styled.button`
         color: #fff;
         background-color: var(--orange);
         border: 1px solid var(--font-gray);
-    }
-
-    div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 `
 
@@ -56,11 +52,16 @@ export const AuthenticationCard = styled.div`
         display: flex;
         justify-content: flex-start;
         margin: 0 auto;
+        padding-top: 1rem;
         width: 80%;
         color: var(--font-gray);
         font-style: italic;
         font-size: 0.9rem;
-        padding-top: 1rem;
+        cursor: pointer;
+    }
+
+    a:last-of-type {
+        padding-top: 0.5rem;
     }
 `
 
