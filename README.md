@@ -4,9 +4,10 @@ Your application to friendly manage your tasks and keep everything in order!
 
 ### How to use it
 
-TODOList separates tasks by user, so what you first have to do is to sign up entering a nickname, an e-mail and a password. Or you can log in directly from Google.
+TODOList saves tasks by user, so what you first have to do is to sign up entering a nickname, an e-mail and a password. Or you can log in directly from Google.
 If you decide to give a valid e-mail to create an account, you will be able to reset your password if you forget it or simply want to change it.
-Once you 
+
+Once you are registerd and logged in, you will be redirected to the main page. The interface is very simple: you will find an input field for you to enter a description for your task. Then, you will have four different colors to choose for customizing your task. Thanks to this you will be able to assign levels or types of task depending on the associ
 
 
 ### `yarn test`
