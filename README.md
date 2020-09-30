@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome to TODOList
 
-## Available Scripts
-
-In the project directory, you can run:
+Your application to friendly manage your tasks and keep everything in order!
 
 ### `yarn start`
 
