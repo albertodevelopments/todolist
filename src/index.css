@@ -46,7 +46,7 @@ ul {
 /* Media queries */
 
 /* Vista teléfono móvil */
-@media (max-width: 360px) {
+@media (max-width: 412px) {
     html,
     body {
         background-color: #fff;

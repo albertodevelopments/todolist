@@ -30,7 +30,7 @@ export const AppButton = styled.button`
     }
 
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         height: 2.2rem;
         font-size: 0.9rem;
 
@@ -76,8 +76,18 @@ export const AuthenticationCard = styled.div`
         padding-top: 0.5rem;
     }
 
+    /* Vista portátil */
+    @media (max-width: 1024px) {
+        width: 60%;
+    }
+
+    /* Vista tableta */
+    @media (max-width: 800px) {
+        width: 70%;
+    }
+
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         width: 100%;
         margin-top: 7rem;
         border: none;
@@ -129,7 +139,7 @@ export const AuthenticationInputGroup = styled.div`
     }
 
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         input[type='email'],
         input[type='password'],
         input[type='text'] {

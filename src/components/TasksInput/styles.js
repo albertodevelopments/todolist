@@ -6,8 +6,16 @@ export const SelectionsBlock = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    /* Vista tableta pequeña */
+    @media (max-width: 720px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        text-align: left;
+    }
+
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 0.5rem;
@@ -38,7 +46,7 @@ export const InputField = styled.input`
     }
 
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         height: 2.2rem;
         font-size: 0.8rem;
         padding: 0.375rem;
@@ -65,12 +73,27 @@ export const ColorRadio = styled.span`
     input {
         display: none;
     }
+
     input:checked + label {
         border: 5px solid ${props => props.borderColor};
     }
 
+    /* Vista tableta pequeña */
+    @media (max-width: 782px) {
+        label {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    /* Vista tableta pequeña */
+    @media (max-width: 782px) {
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+    }
+
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         margin-top: 0.5rem;
         margin-right: 1rem;
 
@@ -97,7 +120,7 @@ export const DateInput = styled.input`
     }
 
     /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    @media (max-width: 412px) {
         font-size: 0.8rem;
         height: 2.2rem;
         padding: 0.375rem;

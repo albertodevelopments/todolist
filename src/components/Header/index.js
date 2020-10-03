@@ -37,7 +37,6 @@ const Header = () => {
 
     const handleLogOut = () => {
         signOut()
-        setUser(null)
         history.push('/login')
     }
 

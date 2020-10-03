@@ -6,10 +6,14 @@ export const MainPage = styled.main`
     padding: 2rem;
     text-align: center;
 
-    /* Vista teléfono móvil */
-    @media (max-width: 360px) {
-        width: 100%;
+    /* Vista de portátil */
+    @media (max-width: 1024px) {
         margin-top: 10rem;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 412px) {
+        width: 100%;
         padding-top: 1rem;
 
         h1 {
@@ -33,9 +37,21 @@ export const TaskSection = styled.div`
         width: 100%;
     }
 
-    /* Vista teléfono móvil */
-    @media (max-width: 360px) {
+    /* Vista de portátil */
+    @media (max-width: 1240px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 80%;
+    }
+
+    @media (max-width: 952px) {
         width: 100%;
+    }
+
+    /* Vista teléfono móvil */
+    @media (max-width: 412px) {
         padding: 0;
     }
 `
